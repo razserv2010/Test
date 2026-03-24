@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחשבון מדבקות למדף</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f9; }
+        .container { max-width: 400px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .result { margin-top: 20px; padding: 10px; border-left: 4px solid #007bff; background: #e7f3ff; }
+        b { color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>מחשבון פריסה</h2>
+        <p>אורך מדף: <b>172 ס"מ</b></p>
+        <p>רוחב מדבקה: <b>20 ס"מ</b></p>
+        
+        <div class="result">
+            <p id="calc"></p>
+        </div>
+    </div>
+
+    <script>
+        const shelf = 172;
+        const sticker = 20;
+        const count = Math.floor(shelf / sticker);
+        const remainder = shelf % sticker;
+
+        document.getElementById('calc').innerHTML = 
+            `נכנסות <b>${count}</b> מדבקות שלמות.<br>` +
+            `נשאר רווח של <b>${remainder} ס"מ</b> בסוף המדף.`;
+    </script>
+</body>
+</html>
